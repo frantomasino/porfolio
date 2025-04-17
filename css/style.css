@@ -313,7 +313,7 @@ footer a:hover {
 }
 
 
- /* Estilo para el botón de descarga */
+  
 .btn-download {
     background-color: transparent;
     color: var(--primary);
@@ -327,32 +327,28 @@ footer a:hover {
     display: inline-block;
     margin-top: 15px;
     letter-spacing: 0.5px;
-    text-transform: none; /* Se elimina la mayúscula */
+    text-transform: none;  
     font-family: 'Poppins', sans-serif;
 }
 
-/* Efecto cuando el cursor pasa sobre el botón */
-.btn-download:hover {
+ .btn-download:hover {
     background-color: var(--primary);
     color: var(--white);
     transform: translateY(-2px);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* Efecto de foco (cuando se hace clic) */
-.btn-download:focus {
+ .btn-download:focus {
     outline: none;
     box-shadow: 0 0 12px var(--primary);
 }
 
-/* Estilo del texto del botón */
-.btn-download {
-    font-size: 1rem; /* Ajustamos un tamaño de fuente más profesional */
-    font-weight: 400; /* Menos peso para hacerlo más sutil */
-}
+ .btn-download {
+    font-size: 1rem; 
+    font-weight: 400;  
+ }
 
-/* Opcional: transiciones más suaves para los cambios */
-.btn-download {
+ .btn-download {
     transition: background-color 0.3s, color 0.3s, transform 0.3s;
 }
 
