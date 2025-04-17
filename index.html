@@ -11,18 +11,34 @@
 
 </head>
 <body>
-    <header class="bg-primary text-white text-center p-4 d-flex justify-content-between align-items-center">
-         <img src="imagenes/foto perfil.jpg" alt="foto perfil" class="header-image">
+    <header class="bg-primary text-white p-4 d-flex justify-content-between align-items-center">
+        <div class="header-content">
+            <img src="imagenes/foto perfil.jpg" alt="foto perfil" class="header-image">
+            <div class="header-text">
+                <h1>Mi Porfolio</h1>
+                <h2>Francisco Tomasino Solari</h2>
+                <p>Desarrollador Full Stack</p>
+            </div>
+        </div>
     
-         <div class="text-center">
-            <h1>Mi Porfolio</h1>
-         </div>
+        <div class="contact-icons">
+            <a href="https://www.linkedin.com/in/francisco-tomasino/" target="_blank" title="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://github.com/frantomasino" target="_blank" title="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="mailto:frantomasino@hotmail.com" target="_blank" title="Email">
+                <i class="fas fa-envelope"></i>
+            </a>
+        </div>
     </header>
     
      <main class="container my-4">
          <section>
             <h2>Sobre Mi</h2>
-            <p>Desarrollador Full Stack con experiencia en React, JavaScript y TypeScript en el Front-End, junto con Node.js y MongoDB en el Back-End. Me especializo en construir aplicaciones eficientes y escalables, con un enfoque en buenas prácticas y optimización. Disfruto trabajar en equipo, aprender nuevas tecnologías y resolver problemas de manera creativa.
+            <p>Desarrollador Full Stack con experiencia en React, JavaScript y TypeScript en el Front-End, junto con Node.js y MongoDB0 en el Back-End.
+               Me especializo en construir aplicaciones eficientes y escalables, con un enfoque en buenas prácticas y optimización. Disfruto trabajar en equipo, aprender nuevas tecnologías y resolver problemas de manera creativa.
             </p>
         </section>
             <br>
@@ -169,7 +185,7 @@
     
         <div class="row mt-4">
             <div class="col-md-4 mb-4">  
-                <div class="card"> 
+                <div class="card h-100"> 
                     <div class="card-body">
                         <h5 class="card-title">Proyecto Piedra, Papel o Tijera</h5>
                         <hr>
@@ -184,7 +200,7 @@
                 </div>
             </div>
             <div class="col-md-4 mb-4">  
-                <div class="card">
+                <div class="card h-100">
                     <div class="card-body">
                         <h5 class="card-title">Proyecto Backend I </h5>
                         <hr>
@@ -199,7 +215,7 @@
                 </div>
             </div>
             <div class="col-md-4 mb-4">  
-                <div class="card">
+                <div class="card h-100">
                     <div class="card-body">
                         <h5 class="card-title">Proyecto Backend II </h5>
                         <hr>
@@ -212,7 +228,9 @@
                         </a>
                     </div>
                 </div>
-            </div>
+            </div> 
+        </div>
+        
 
             <div class="col-md-4 mb-4">  
                 <div class="card">
@@ -243,10 +261,11 @@
             <div class="card">
                 <img src="imagenes/curso desarrollo.png" class="card-img-top" alt="Certificado web">
                 <div class="card-body">
-                    <h5 class="card-title">Curso de Desarrollo Web</h5>
+                    <h5 class="card-title">Curso Desarrollo Web</h5>
                     <p class="card-text">Plataforma: Coderhouse</p>
                     <p class="note">Nota: 8</p>
                     <p class="card-dates"><strong>Inicio:</strong> Agosto 2023 - <strong>Fin:</strong> Octubre 2023</p>
+                    <a href="imagenes/curso desarrollo.png" class="btn btn-download" download>Descargar Certificado</a>
                 </div>
             </div>
         </div>
@@ -254,10 +273,11 @@
             <div class="card">
                 <img src="imagenes/curso javascript.png" class="card-img-top" alt="curso javascript">
                 <div class="card-body">
-                    <h5 class="card-title">Curso de JavaScript</h5>
+                    <h5 class="card-title">Curso JavaScript</h5>
                     <p class="card-text">Plataforma: Coderhouse</p>
                     <p class="note">Nota: 9</p>
                     <p class="card-dates"><strong>Inicio:</strong> Enero 2024 - <strong>Fin:</strong> Abril 2024</p>
+                    <a href="imagenes/curso javascript.png" class="btn btn-download" download>Descargar Certificado</a>
                 </div>
             </div>
         </div>
@@ -265,10 +285,11 @@
             <div class="card">
                 <img src="imagenes/curso react.png" class="card-img-top" alt="Curso de ReactJs">
                 <div class="card-body">
-                    <h5 class="card-title">Curso de ReactJs</h5>
+                    <h5 class="card-title">Curso ReactJs</h5>
                     <p class="card-text">Plataforma: Coderhouse</p>
                     <p class="note">Nota: 10</p>
                     <p class="card-dates"><strong>Inicio:</strong> Abril 2024 - <strong>Fin:</strong> Junio 2024</p>
+                    <a href="imagenes/curso react.png" class="btn btn-download" download>Descargar Certificado</a>
                 </div>
             </div>
         </div>  
@@ -279,10 +300,11 @@
             <div class="card">
                 <img src="imagenes/certificado-carrera.png" class="card-img-top" alt="Carrera de frontend">
                 <div class="card-body">
-                    <h5 class="card-title">Carrera de Desarrollo Frontend React</h5>
+                    <h5 class="card-title">Carrera Desarrollo Frontend React</h5>
                     <p class="card-text">Plataforma: Coderhouse</p>
                     <p class="note">Nota: 9</p>
                     <p class="card-dates"><strong>Inicio:</strong> Agosto 2023 - <strong>Fin:</strong> Junio 2024</p>
+                    <a href="imagenes/certificado-carrera.png" class="btn btn-download" download>Descargar Certificado</a>
                 </div>
             </div>
         </div>
@@ -291,10 +313,11 @@
             <div class="card">
                 <img src="imagenes/curso backend.png" class="card-img-top" alt="Curso de backend">
                 <div class="card-body">
-                    <h5 class="card-title">Curso de Programación Backend I</h5>
+                    <h5 class="card-title">Curso Programación Backend I</h5>
                     <p class="card-text">Plataforma: Coderhouse</p>
                     <p class="note">Nota: 10</p>
                     <p class="card-dates"><strong>Inicio:</strong> Julio 2024 - <strong>Fin:</strong> Septiembre 2024</p>
+                    <a href="imagenes/curso backend.png" class="btn btn-download" download>Descargar Certificado</a>
                 </div>
             </div>
         </div>
@@ -303,10 +326,11 @@
             <div class="card">
                 <img src="imagenes/certificado-backend II.jpg" class="card-img-top" alt="Curso de backend">
                 <div class="card-body">
-                    <h5 class="card-title">Curso de Programación Backend II</h5>
+                    <h5 class="card-title">Curso Programación Backend II</h5>
                     <p class="card-text">Plataforma: Coderhouse</p>
                     <p class="note">Nota: 10</p>
                     <p class="card-dates"><strong>Inicio:</strong> Octubre 2024 - <strong>Fin:</strong> Noviembre 2024</p>
+                    <a href="imagenes/certificado-backend II.jpg" class="btn btn-download" download>Descargar Certificado</a>
                 </div>
             </div>
         </div>
@@ -315,26 +339,31 @@
             <div class="card">
                 <img src="imagenes/curso- Programación Backend III.png" class="card-img-top" alt="Curso de backend III">
                 <div class="card-body">
-                    <h5 class="card-title">Curso de Programación Backend III</h5>
+                    <h5 class="card-title">Curso Programación Backend III</h5>
                     <p class="card-text">Plataforma: Coderhouse</p>
                     <p class="note">Nota: 9</p>
                     <p class="card-dates"><strong>Inicio:</strong> Enero 2025 - <strong>Fin:</strong> Marzo 2025</p>
+                    <a href="imagenes/curso- Programación Backend III.png" class="btn btn-download" download>Descargar Certificado</a>
+
                 </div>
             </div>
         </div>
 
         <div class="col-md-4 mb-4">  
             <div class="card">
-                <img src="imagenes/Carrera de Desarrollo Full Stack.png" class="card-img-top" alt="Carrera full stack">
+                <img src="imagenes/carrera full stack.png" class="card-img-top" alt="Carrera full stack">
                 <div class="card-body">
                     <h5 class="card-title">Carrera Programación Full Stack</h5>
                     <p class="card-text">Plataforma: Coderhouse</p>
                     <p class="note">Nota: 9</p>
                     <p class="card-dates"><strong>Inicio:</strong> Agosto 2023 - <strong>Fin:</strong> Marzo 2025</p>
+                    <!-- Botón para descargar el certificado -->
+                    <a href="imagenes/carrera full stack.png" class="btn btn-download" download>Descargar Certificado</a>
                 </div>
             </div>
         </div>
-
+        
+        
     </div>
 </section>
 
@@ -386,7 +415,7 @@
         <a href="https://github.com/frantomasino" class="btn btn-link text-white" target="_blank" rel="noopener noreferrer">
             <i class="fab fa-github"></i> GitHub
         </a>
-        <a href="mailto:frantomasino@hotmail.com" class="btn btn-link text-white" target="_blank" rel="noopener noreferrer">
+        <a href="frantomasino@hotmail.com" class="btn btn-link text-white" target="_blank" rel="noopener noreferrer">
             <i class="fas fa-envelope"></i> Correo
         </a>
         <a href="https://wa.me/5491131256510" class="btn btn-link text-white" target="_blank" rel="noopener noreferrer">
