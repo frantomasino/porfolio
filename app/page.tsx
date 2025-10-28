@@ -96,7 +96,7 @@ export default function Portfolio() {
   const certifications = {
     careers: [
       {
-        title: "Carrera Desarrollo Full Stack",
+        title: "Carrera Desarrollador Full Stack",
         institution: "Coderhouse",
         period: "Agosto 2023 - Marzo 2025",
         grade: "9",
