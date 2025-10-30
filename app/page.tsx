@@ -124,7 +124,7 @@ export default function Portfolio() {
         institution: "Coderhouse",
         period: "Agosto 2023 - Junio 2024",
         grade: "9",
-        image: "imagenes/certificado-frontend reactjs.png",
+        image: "/Carrerafrontend.png ",
       },
     ],
     courses: [
