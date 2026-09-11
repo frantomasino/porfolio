@@ -42,7 +42,7 @@
 @theme inline {
   --font-sans: var(--font-geist), "Geist Fallback", ui-sans-serif, system-ui;
   --font-mono: var(--font-geist-mono), "Geist Mono Fallback", ui-monospace;
-  --font-display: var(--font-instrument), "Instrument Serif", Georgia, serif;
+  --font-display: Georgia, "Times New Roman", ui-serif, serif;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
