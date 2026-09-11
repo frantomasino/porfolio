@@ -1,17 +1,8 @@
 import type { Metadata } from "next"
-import { Geist, Geist_Mono } from "next/font/google"
+import { GeistSans } from "geist/font/sans"
+import { GeistMono } from "geist/font/mono"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
-
-const geist = Geist({
-  subsets: ["latin"],
-  variable: "--font-geist",
-})
-
-const geistMono = Geist_Mono({
-  subsets: ["latin"],
-  variable: "--font-geist-mono",
-})
 
 export const metadata: Metadata = {
   title: {
@@ -50,7 +41,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="es" className={`${geist.variable} ${geistMono.variable} dark`}>
+    <html lang="es" className={`${GeistSans.variable} ${GeistMono.variable} dark`}>
       <body className="font-sans min-h-screen">
         {children}
         <Analytics />

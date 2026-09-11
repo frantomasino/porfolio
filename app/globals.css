@@ -40,7 +40,7 @@
 }
 
 @theme inline {
-  --font-sans: var(--font-geist), "Geist Fallback", ui-sans-serif, system-ui;
+  --font-sans: var(--font-geist-sans), "Geist Fallback", ui-sans-serif, system-ui;
   --font-mono: var(--font-geist-mono), "Geist Mono Fallback", ui-monospace;
   --font-display: Georgia, "Times New Roman", ui-serif, serif;
   --color-background: var(--background);
