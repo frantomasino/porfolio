@@ -1,29 +1,32 @@
-import { Card } from "@/components/ui/card"
-
 export function About() {
   return (
-    <section id="about" className="py-20 px-4">
-      <div className="container mx-auto max-w-4xl">
-        <h2 className="text-3xl md:text-4xl font-bold mb-8 text-balance">Sobre Mí</h2>
-        <Card className="p-8">
-          <div className="space-y-4 text-muted-foreground leading-relaxed">
-            <p>
-              {
-                "Soy un desarrollador apasionado por crear soluciones tecnológicas innovadoras que resuelven problemas reales. Con experiencia en desarrollo web full-stack, me especializo en construir aplicaciones escalables y eficientes."
-              }
-            </p>
-            <p>
-              {
-                "Mi enfoque se centra en escribir código limpio, mantener las mejores prácticas y colaborar efectivamente con equipos multidisciplinarios. Me encanta aprender nuevas tecnologías y mantenerme actualizado con las últimas tendencias del desarrollo."
-              }
-            </p>
-            <p>
-              {
-                "Cuando no estoy programando, disfruto contribuir a proyectos de código abierto, leer sobre nuevas tecnologías y compartir conocimientos con la comunidad de desarrolladores."
-              }
-            </p>
-          </div>
-        </Card>
+    <section id="sobre-mi" className="py-20 sm:py-28 border-t border-white/8">
+      <div className="mx-auto grid max-w-6xl gap-12 px-5 sm:px-8 lg:grid-cols-[0.9fr_1.1fr]">
+        <div>
+          <p className="eyebrow mb-3">Sobre mí</p>
+          <h2 className="font-display text-4xl sm:text-5xl text-balance">
+            Construyo software que un negocio puede usar mañana.
+          </h2>
+        </div>
+        <div className="space-y-5 text-[15px] leading-relaxed text-muted-foreground">
+          <p>
+            Soy Francisco Tomasino Solari, desarrollador full stack en Buenos Aires. Vengo de
+            operaciones reales —ventas, stock, remitos, atención al cliente— y por eso diseño
+            productos que se entienden en el mostrador, no solo en Figma.
+          </p>
+          <p>
+            Trabajo con <strong className="text-foreground font-medium">Next.js</strong>,{" "}
+            <strong className="text-foreground font-medium">TypeScript</strong>,{" "}
+            <strong className="text-foreground font-medium">Supabase</strong> y{" "}
+            <strong className="text-foreground font-medium">Tailwind CSS</strong>. Hoy desarrollo
+            tiendas y features en Shopify, y en paralelo entrego sitios y sistemas a medida:
+            catálogos, paneles y herramientas internas.
+          </p>
+          <p>
+            Me interesa sumarme a un equipo donde el código tenga impacto: interfaces claras,
+            backends simples y producto que se pueda mantener.
+          </p>
+        </div>
       </div>
     </section>
   )

@@ -1,125 +1,64 @@
-"use client"
+import { Github, Linkedin, Mail, MessageCircle } from "lucide-react"
+import { profile } from "@/lib/content"
 
-import type React from "react"
-
-import { useState } from "react"
-import { Card } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Mail, Linkedin, Github, Twitter } from "lucide-react"
+const channels = [
+  {
+    label: "Email",
+    value: profile.email,
+    href: `mailto:${profile.email}`,
+    icon: Mail,
+  },
+  {
+    label: "WhatsApp",
+    value: profile.phoneDisplay,
+    href: profile.phoneHref,
+    icon: MessageCircle,
+  },
+  {
+    label: "LinkedIn",
+    value: "francisco-tomasino",
+    href: profile.linkedin,
+    icon: Linkedin,
+  },
+  {
+    label: "GitHub",
+    value: "frantomasino",
+    href: profile.github,
+    icon: Github,
+  },
+]
 
 export function Contact() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  })
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    // Aquí puedes agregar la lógica para enviar el formulario
-    console.log("Form submitted:", formData)
-    alert("¡Gracias por tu mensaje! Te contactaré pronto.")
-    setFormData({ name: "", email: "", message: "" })
-  }
-
   return (
-    <section id="contact" className="py-20 px-4">
-      <div className="container mx-auto max-w-4xl">
-        <h2 className="text-3xl md:text-4xl font-bold mb-8 text-balance">Contacto</h2>
-        <div className="grid md:grid-cols-2 gap-8">
-          <Card className="p-8">
-            <h3 className="text-xl font-semibold mb-4 text-foreground">{"Envíame un mensaje"}</h3>
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div>
-                <Input
-                  placeholder="Tu nombre"
-                  value={formData.name}
-                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  required
-                />
-              </div>
-              <div>
-                <Input
-                  type="email"
-                  placeholder="Tu email"
-                  value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  required
-                />
-              </div>
-              <div>
-                <Textarea
-                  placeholder="Tu mensaje"
-                  rows={5}
-                  value={formData.message}
-                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  required
-                />
-              </div>
-              <Button type="submit" className="w-full">
-                Enviar Mensaje
-              </Button>
-            </form>
-          </Card>
-
-          <div className="space-y-6">
-            <Card className="p-6">
-              <h3 className="text-xl font-semibold mb-4 text-foreground">{"Información de Contacto"}</h3>
-              <div className="space-y-3 text-muted-foreground">
-                <div className="flex items-center gap-3">
-                  <Mail size={20} className="text-primary" />
-                  <span>{"tu.email@ejemplo.com"}</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <Linkedin size={20} className="text-primary" />
-                  <a
-                    href="https://linkedin.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-foreground transition-colors"
-                  >
-                    {"linkedin.com/in/tunombre"}
-                  </a>
-                </div>
-                <div className="flex items-center gap-3">
-                  <Github size={20} className="text-primary" />
-                  <a
-                    href="https://github.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-foreground transition-colors"
-                  >
-                    {"github.com/tunombre"}
-                  </a>
-                </div>
-                <div className="flex items-center gap-3">
-                  <Twitter size={20} className="text-primary" />
-                  <a
-                    href="https://twitter.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-foreground transition-colors"
-                  >
-                    {"@tunombre"}
-                  </a>
-                </div>
-              </div>
-            </Card>
-
-            <Card className="p-6 bg-primary text-primary-foreground">
-              <h3 className="text-lg font-semibold mb-2">{"¿Listo para trabajar juntos?"}</h3>
-              <p className="text-sm opacity-90">
-                {"Estoy disponible para proyectos freelance y oportunidades de colaboración. ¡Hablemos!"}
-              </p>
-            </Card>
+    <section id="contacto" className="py-20 sm:py-28 border-t border-white/8">
+      <div className="mx-auto max-w-6xl px-5 sm:px-8">
+        <div className="rounded-[2rem] border border-white/10 bg-gradient-to-br from-white/6 to-transparent p-8 sm:p-12">
+          <p className="eyebrow mb-3">Siguiente paso</p>
+          <h2 className="font-display text-4xl sm:text-6xl text-balance max-w-3xl">
+            ¿Hablamos de un rol o de un producto?
+          </h2>
+          <p className="mt-5 max-w-xl text-muted-foreground leading-relaxed">
+            Estoy buscando sumarme a un equipo de desarrollo. También puedo mostrar en detalle
+            cualquiera de los proyectos.
+          </p>
+          <div className="mt-10 grid gap-3 sm:grid-cols-2">
+            {channels.map((channel) => (
+              <a
+                key={channel.label}
+                href={channel.href}
+                target={channel.href.startsWith("http") ? "_blank" : undefined}
+                rel={channel.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                className="flex items-center gap-4 rounded-2xl border border-white/10 bg-background/50 px-4 py-4 hover:border-primary/40 transition-colors"
+              >
+                <channel.icon className="h-5 w-5 text-primary" />
+                <span>
+                  <span className="block text-xs text-muted-foreground">{channel.label}</span>
+                  <span className="text-sm font-medium">{channel.value}</span>
+                </span>
+              </a>
+            ))}
           </div>
         </div>
-
-        <footer className="mt-16 pt-8 border-t border-border text-center text-muted-foreground">
-          <p>{"© 2025 Tu Nombre. Todos los derechos reservados."}</p>
-        </footer>
       </div>
     </section>
   )

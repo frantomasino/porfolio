@@ -1,114 +1,80 @@
 "use client"
 
-import { useState, useEffect } from "react"
-import { Button } from "@/components/ui/button"
+import { useEffect, useState } from "react"
 import { Menu, X } from "lucide-react"
+import { navItems, profile } from "@/lib/content"
+import { cn } from "@/lib/utils"
 
 export function Header() {
-  const [isScrolled, setIsScrolled] = useState(false)
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [open, setOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20)
-    }
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
+    const onScroll = () => setScrolled(window.scrollY > 12)
+    onScroll()
+    window.addEventListener("scroll", onScroll, { passive: true })
+    return () => window.removeEventListener("scroll", onScroll)
   }, [])
-
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id)
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" })
-      setIsMobileMenuOpen(false)
-    }
-  }
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-background/80 backdrop-blur-md border-b border-border" : "bg-transparent"
-      }`}
+      className={cn(
+        "fixed top-0 inset-x-0 z-40 transition-all duration-300",
+        scrolled || open ? "bg-background/80 backdrop-blur-xl border-b border-white/8" : "bg-transparent",
+      )}
     >
-      <div className="container mx-auto px-4 py-4">
-        <nav className="flex items-center justify-between">
-          <button
-            onClick={() => scrollToSection("hero")}
-            className="text-xl font-bold text-foreground hover:text-primary transition-colors"
-          >
-            {"Tu Nombre"}
-          </button>
+      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 sm:px-8">
+        <a href="#inicio" className="flex items-center gap-2 font-medium tracking-tight">
+          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-xs font-bold text-primary-foreground">
+            {profile.shortName}
+          </span>
+          <span className="hidden sm:inline text-sm">Francisco Tomasino</span>
+        </a>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
-            <button
-              onClick={() => scrollToSection("about")}
+        <nav className="hidden lg:flex items-center gap-7">
+          {navItems.map((item) => (
+            <a
+              key={item.href}
+              href={item.href}
               className="text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
-              Sobre Mí
-            </button>
-            <button
-              onClick={() => scrollToSection("experience")}
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-            >
-              Experiencia
-            </button>
-            <button
-              onClick={() => scrollToSection("projects")}
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-            >
-              Proyectos
-            </button>
-            <button
-              onClick={() => scrollToSection("skills")}
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-            >
-              Habilidades
-            </button>
-            <Button onClick={() => scrollToSection("contact")} size="sm">
-              Contacto
-            </Button>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="md:hidden text-foreground">
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+              {item.label}
+            </a>
+          ))}
         </nav>
 
-        {/* Mobile Navigation */}
-        {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 flex flex-col gap-4">
-            <button
-              onClick={() => scrollToSection("about")}
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors text-left"
-            >
-              Sobre Mí
-            </button>
-            <button
-              onClick={() => scrollToSection("experience")}
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors text-left"
-            >
-              Experiencia
-            </button>
-            <button
-              onClick={() => scrollToSection("projects")}
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors text-left"
-            >
-              Proyectos
-            </button>
-            <button
-              onClick={() => scrollToSection("skills")}
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors text-left"
-            >
-              Habilidades
-            </button>
-            <Button onClick={() => scrollToSection("contact")} size="sm" className="w-full">
-              Contacto
-            </Button>
-          </div>
-        )}
+        <div className="flex items-center gap-3">
+          <a
+            href="#contacto"
+            className="hidden sm:inline-flex h-9 items-center rounded-full bg-primary px-4 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
+          >
+            Contacto
+          </a>
+          <button
+            type="button"
+            className="lg:hidden p-2 rounded-md hover:bg-white/5"
+            onClick={() => setOpen((v) => !v)}
+            aria-label={open ? "Cerrar menú" : "Abrir menú"}
+          >
+            {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
+        </div>
       </div>
+
+      {open && (
+        <nav className="lg:hidden border-t border-white/8 px-5 py-4 space-y-1 bg-background/95 backdrop-blur-xl">
+          {navItems.map((item) => (
+            <a
+              key={item.href}
+              href={item.href}
+              onClick={() => setOpen(false)}
+              className="block rounded-lg px-3 py-2.5 text-sm hover:bg-white/5"
+            >
+              {item.label}
+            </a>
+          ))}
+        </nav>
+      )}
     </header>
   )
 }
