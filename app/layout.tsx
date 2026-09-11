@@ -26,12 +26,15 @@ export const metadata: Metadata = {
     template: "%s · Francisco Tomasino",
   },
   description:
-    "Portfolio de Francisco Tomasino Solari. Desarrollador Full Stack. Productos reales: Lambda 3D, MS Motors, Zibra Consultores, Remito y Nexa.",
+    "Portfolio de Francisco Tomasino Solari. Desarrollador Full Stack. Shopify, Liquid, Gemini IA y productos reales: Lambda 3D, MS Motors, Zibra, Remito y Nexa.",
   keywords: [
     "Francisco Tomasino",
     "desarrollador full stack",
     "Next.js",
     "TypeScript",
+    "Shopify",
+    "Liquid",
+    "Gemini",
     "portfolio",
     "Buenos Aires",
   ],

@@ -18,8 +18,12 @@ export function About() {
             Trabajo con <strong className="text-foreground font-medium">Next.js</strong>,{" "}
             <strong className="text-foreground font-medium">TypeScript</strong>,{" "}
             <strong className="text-foreground font-medium">Supabase</strong> y{" "}
-            <strong className="text-foreground font-medium">Tailwind CSS</strong>. Hoy desarrollo
-            tiendas y features en Shopify, y en paralelo entrego sitios y sistemas a medida:
+            <strong className="text-foreground font-medium">Tailwind CSS</strong>. En el día a día
+            también desarrollo tiendas en{" "}
+            <strong className="text-foreground font-medium">Shopify</strong> con{" "}
+            <strong className="text-foreground font-medium">Liquid</strong>, y uso{" "}
+            <strong className="text-foreground font-medium">Gemini</strong> para acelerar análisis,
+            documentación y trabajo operativo. En paralelo entrego sitios y sistemas a medida:
             catálogos, paneles y herramientas internas.
           </p>
           <p>

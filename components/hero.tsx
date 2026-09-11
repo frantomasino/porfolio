@@ -27,8 +27,9 @@ export function Hero() {
               {profile.role}
             </p>
             <p className="mt-6 max-w-xl text-base sm:text-lg leading-relaxed text-muted-foreground">
-              Diseño y desarrollo productos web para empresas reales: catálogos, plataformas 3D y
-              sistemas de gestión. Código limpio, interfaces claras y foco en que el negocio funcione.
+              Diseño y desarrollo productos web para empresas reales: tiendas Shopify, catálogos,
+              plataformas 3D y sistemas de gestión. Código limpio, Liquid cuando hace falta, y foco
+              en que el negocio funcione.
             </p>
 
             <div className="mt-10 flex flex-wrap gap-3">

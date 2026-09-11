@@ -22,12 +22,20 @@ export const skillGroups = [
     items: ["Node.js", "Express", "REST APIs", "Firebase", "Supabase", "MongoDB", "PostgreSQL", "NoSQL"],
   },
   {
+    title: "Shopify",
+    items: ["Shopify", "Liquid", "Temas", "JavaScript", "HTML", "CSS"],
+  },
+  {
+    title: "IA",
+    items: ["Gemini", "Prompting", "Google Workspace"],
+  },
+  {
     title: "Producto & ops",
-    items: ["GitHub", "Docker", "Testing", "SEO", "Shopify", "Liquid", "WordPress"],
+    items: ["GitHub", "Docker", "Testing", "SEO", "WordPress"],
   },
   {
     title: "Negocio",
-    items: ["Odoo ERP", "Tango Gestión", "Excel avanzado", "Google Workspace"],
+    items: ["Odoo ERP", "Tango Gestión", "Excel avanzado"],
   },
 ]
 
@@ -140,9 +148,10 @@ export const experience = [
     company: "Eaata",
     period: "Ene 2024 — Actualidad",
     points: [
-      "Desarrollo y personalización de tiendas Shopify con HTML, CSS, JavaScript y Liquid.",
+      "Desarrollo y personalización de tiendas Shopify: temas, Liquid, JavaScript y CSS.",
+      "Nuevas funcionalidades de storefront y optimización continua del frontend.",
       "Integraciones con Firebase y Supabase: autenticación, storage y bases de datos.",
-      "Soporte técnico a clientes y mejora continua del frontend.",
+      "Soporte técnico a clientes y resolución de incidencias en producción.",
     ],
   },
   {
@@ -193,6 +202,11 @@ export const certifications = {
     },
   ],
   courses: [
+    {
+      title: "Gemini IA",
+      institution: "Coderhouse",
+      period: "2025",
+    },
     {
       title: "Programación Backend III",
       institution: "Coderhouse",
