@@ -83,20 +83,20 @@ export const featuredProjects = [
   {
     slug: "zibra",
     title: "Zibra Consultores",
-    client: "Consultora",
+    client: "Consultora · PyMEs",
     year: "2026",
     category: "Sitio institucional",
     summary:
-      "Presencia digital para una consultora: servicios, identidad y captación de consultas con una estética corporativa clara.",
+      "Sitio en producción de una consultora para pymes: servicios, identidad y captación de consultas con una estética corporativa clara.",
     description:
-      "Desarrollé el sitio de Zibra Consultores para que la marca se presente con profesionalismo. El foco está en explicar servicios, transmitir confianza y convertir visitas en conversaciones, con una interfaz limpia, responsive y fácil de mantener.",
+      "Desarrollé el sitio de Zibra Consultores para que la marca se presente con profesionalismo. El foco está en explicar cómo asesoran a pymes en procesos, liderazgo y equipos, transmitir confianza y convertir visitas en conversaciones, con una interfaz limpia, responsive y fácil de mantener.",
     highlights: [
       "Identidad visual y arquitectura de contenidos",
-      "Páginas de servicios y contacto",
+      "Páginas de servicios para pymes y contacto",
       "Diseño responsive pensado para conversión",
     ],
     stack: ["Next.js", "TypeScript", "Tailwind CSS"],
-    demo: null,
+    demo: "https://www.zibraconsultores.com/",
     github: null,
     accent: "zibra",
   },
@@ -123,17 +123,17 @@ export const featuredProjects = [
   {
     slug: "nexa",
     title: "Nexa",
-    client: "Gestión comercial",
+    client: "Calculadora de baldosas",
     year: "2026",
-    category: "SaaS · Panel de gestión",
+    category: "Calculadora · Baldosas",
     summary:
-      "Sistema comercial para ordenar la operación diaria: pedidos, clientes, productos, stock y control del negocio en un solo lugar.",
+      "Calculadora de baldosas para estimar el material de un ambiente: medidas, formato de la pieza y cantidad a pedir. No es un panel genérico.",
     description:
-      "Nexa es un panel de gestión comercial. Centraliza pedidos, clientes y catálogo para que un comercio deje de operar en planillas sueltas. Incluye autenticación, dashboards y flujos de alta/edición pensados para el día a día, no para una demo.",
+      "Nexa es una calculadora de baldosas. Sirve para calcular cuántas piezas hacen falta a partir de las medidas del espacio y el tamaño de la baldosa, y dejar de cotizar a ojo o en planillas. La interfaz es simple y pensada para usarse en el mostrador o en obra.",
     highlights: [
-      "Pedidos, clientes y productos en un solo sistema",
-      "Control de stock y precios",
-      "Auth y panel operativo con Supabase",
+      "Cálculo de baldosas según el ambiente y el formato",
+      "Estimación de material para cotizar sin planillas",
+      "Herramienta concreta de revestimientos, no un dashboard de demo",
     ],
     stack: ["Next.js", "TypeScript", "Supabase", "Tailwind CSS"],
     demo: "https://app-two-beta-37.vercel.app",

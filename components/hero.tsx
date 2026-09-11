@@ -1,6 +1,45 @@
+import type { ReactNode } from "react"
 import { ArrowDownRight, Download, MapPin } from "lucide-react"
 import { featuredProjects, profile } from "@/lib/content"
 import { ProjectCover } from "@/components/project-cover"
+import { cn } from "@/lib/utils"
+
+type MosaicProject = (typeof featuredProjects)[number]
+
+function MosaicLink({
+  project,
+  className,
+  children,
+}: {
+  project: MosaicProject
+  className?: string
+  children: ReactNode
+}) {
+  const classes = cn(
+    "overflow-hidden rounded-2xl border border-white/10 hover:border-primary/40 transition-colors",
+    className,
+  )
+
+  if (project.demo) {
+    return (
+      <a
+        href={project.demo}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={`Ver sitio de ${project.title}`}
+        className={classes}
+      >
+        {children}
+      </a>
+    )
+  }
+
+  return (
+    <a href="#trabajo" aria-label={project.title} className={classes}>
+      {children}
+    </a>
+  )
+}
 
 export function Hero() {
   return (
@@ -52,17 +91,13 @@ export function Hero() {
           </div>
 
           <div className="hidden lg:grid grid-cols-2 gap-3">
-            <a href="#trabajo" className="col-span-2 overflow-hidden rounded-2xl border border-white/10 h-40 hover:border-primary/40 transition-colors">
+            <MosaicLink project={featuredProjects[0]} className="col-span-2 h-40">
               <ProjectCover accent={featuredProjects[0].accent} title={featuredProjects[0].title} className="h-full" />
-            </a>
+            </MosaicLink>
             {featuredProjects.slice(1, 5).map((project) => (
-              <a
-                key={project.slug}
-                href="#trabajo"
-                className="overflow-hidden rounded-2xl border border-white/10 h-28 hover:border-primary/40 transition-colors"
-              >
+              <MosaicLink key={project.slug} project={project} className="h-28">
                 <ProjectCover accent={project.accent} title={project.title} className="h-full" />
-              </a>
+              </MosaicLink>
             ))}
           </div>
         </div>

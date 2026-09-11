@@ -58,13 +58,16 @@ function ZibraArt() {
         <p className="font-display text-2xl text-white/90">Zibra</p>
         <p className="mt-1 text-[10px] uppercase tracking-[0.2em] text-white/45">Consultores</p>
         <div className="mt-4 grid grid-cols-3 gap-2">
-          {["Estrategia", "Procesos", "Equipos"].map((item) => (
+          {["Procesos", "Liderazgo", "Equipos"].map((item) => (
             <div key={item} className="rounded-lg bg-white/8 px-2 py-2 text-center text-[10px] text-white/70">
               {item}
             </div>
           ))}
         </div>
       </div>
+      <p className="absolute bottom-4 left-6 font-mono text-[10px] tracking-[0.14em] text-white/40">
+        zibraconsultores.com
+      </p>
     </div>
   )
 }
@@ -89,25 +92,39 @@ function RemitoArt() {
 }
 
 function NexaArt() {
+  const tiles = [
+    "#1a5c40",
+    "#245a3c",
+    "#2f7a52",
+    "#163d2c",
+    "#1f6b48",
+    "#0f2e22",
+    "#2a7a55",
+    "#1a4a34",
+  ]
+
   return (
-    <div className="absolute inset-0 bg-[linear-gradient(160deg,#0c1612,#1a5c40)]">
-      <div className="absolute left-6 right-6 top-8 grid grid-cols-3 gap-2">
-        {["Pedidos", "Clientes", "Stock"].map((label, i) => (
-          <div key={label} className="rounded-xl border border-white/15 bg-white/8 p-3">
-            <p className="text-[10px] text-white/50">{label}</p>
-            <p className="mt-1 font-display text-xl text-white/90">{[128, 64, 41][i]}</p>
-          </div>
+    <div className="absolute inset-0 bg-[#0c1612]">
+      <div className="absolute inset-0 grid grid-cols-8 grid-rows-4 gap-px p-2">
+        {Array.from({ length: 32 }, (_, i) => (
+          <div
+            key={i}
+            className="rounded-[2px]"
+            style={{
+              background: tiles[i % tiles.length],
+              boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.08)",
+            }}
+          />
         ))}
       </div>
-      <div className="absolute left-6 right-6 bottom-8 h-16 rounded-xl border border-white/10 bg-black/20">
-        <svg viewBox="0 0 300 50" className="h-full w-full px-2">
-          <path
-            d="M0 40 L40 28 L80 32 L120 18 L160 22 L200 10 L240 16 L300 8"
-            stroke="#e8ff6a"
-            strokeWidth="2"
-            fill="none"
-          />
-        </svg>
+      <div className="absolute left-4 top-4 rounded-lg border border-white/15 bg-black/55 px-3 py-2 backdrop-blur-[2px]">
+        <p className="text-[9px] uppercase tracking-[0.22em] text-white/55">Calculadora</p>
+        <p className="font-display text-xl leading-none text-white/90">Baldosas</p>
+      </div>
+      <div className="absolute bottom-4 left-4 right-4 flex gap-3 rounded-lg border border-white/10 bg-black/45 px-3 py-2 font-mono text-[10px] text-[#e8ff6a]">
+        <span>12,4 m²</span>
+        <span>48 u</span>
+        <span>+10% merma</span>
       </div>
     </div>
   )

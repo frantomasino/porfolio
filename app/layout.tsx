@@ -21,6 +21,9 @@ export const metadata: Metadata = {
     "Gemini",
     "portfolio",
     "Buenos Aires",
+    "Nexa",
+    "calculadora de baldosas",
+    "Zibra Consultores",
   ],
   authors: [{ name: "Francisco Tomasino Solari" }],
   openGraph: {
