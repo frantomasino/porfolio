@@ -55,9 +55,7 @@ function CertCard({
         <p className="mt-1 text-xs text-muted-foreground">
           {institution} · {period}
         </p>
-        <p className="mt-3 text-xs text-primary opacity-0 group-hover:opacity-100 transition-opacity">
-          Ver certificado →
-        </p>
+        <p className="mt-3 text-xs text-primary">Ver certificado →</p>
       </div>
       <span className="shrink-0 rounded-full border border-white/10 px-2.5 py-1 text-xs font-medium">
         {grade}

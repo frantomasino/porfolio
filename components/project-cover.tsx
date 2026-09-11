@@ -54,15 +54,17 @@ function MotorsArt() {
 function ZibraArt() {
   return (
     <div className="absolute inset-0 bg-[linear-gradient(145deg,#120f1c,#3c2a68)]">
-      <div className="absolute left-8 top-10 space-y-3 w-[70%]">
-        <div className="h-3 w-40 rounded bg-white/25" />
-        <div className="h-3 w-56 rounded bg-white/12" />
-        <div className="mt-6 grid grid-cols-2 gap-3">
-          <div className="h-16 rounded-xl bg-white/8 border border-white/10" />
-          <div className="h-16 rounded-xl bg-white/8 border border-white/10" />
+      <div className="absolute left-6 right-6 top-8 rounded-xl border border-white/15 bg-black/20 p-4">
+        <p className="font-display text-2xl text-white/90">Zibra</p>
+        <p className="mt-1 text-[10px] uppercase tracking-[0.2em] text-white/45">Consultores</p>
+        <div className="mt-4 grid grid-cols-3 gap-2">
+          {["Estrategia", "Procesos", "Equipos"].map((item) => (
+            <div key={item} className="rounded-lg bg-white/8 px-2 py-2 text-center text-[10px] text-white/70">
+              {item}
+            </div>
+          ))}
         </div>
       </div>
-      <p className="absolute right-6 bottom-6 font-display text-6xl text-white/15">Z</p>
     </div>
   )
 }

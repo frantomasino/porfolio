@@ -62,7 +62,7 @@ export function Header() {
       </div>
 
       {open && (
-        <nav className="lg:hidden border-t border-white/8 px-5 py-4 space-y-1 bg-background/95 backdrop-blur-xl">
+        <nav className="lg:hidden border-t border-white/8 px-5 py-5 space-y-1 bg-background">
           {navItems.map((item) => (
             <a
               key={item.href}
@@ -73,6 +73,13 @@ export function Header() {
               {item.label}
             </a>
           ))}
+          <a
+            href="#contacto"
+            onClick={() => setOpen(false)}
+            className="mt-2 flex h-10 items-center justify-center rounded-full bg-primary text-sm font-medium text-primary-foreground"
+          >
+            Escribime
+          </a>
         </nav>
       )}
     </header>

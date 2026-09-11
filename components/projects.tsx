@@ -19,7 +19,7 @@ export function Projects() {
           </p>
         </div>
 
-        <article className="group overflow-hidden rounded-3xl border border-white/10 bg-card">
+        <article className="group overflow-hidden rounded-3xl border border-white/10 bg-card transition-colors hover:border-primary/25">
           <ProjectCover accent={lead.accent} title={lead.title} className="h-64 sm:h-80" />
           <div className="grid gap-8 p-6 sm:p-10 lg:grid-cols-[1.2fr_0.8fr]">
             <div>
@@ -59,7 +59,7 @@ export function Projects() {
           {rest.map((project) => (
             <article
               key={project.slug}
-              className="flex flex-col overflow-hidden rounded-3xl border border-white/10 bg-card"
+              className="flex flex-col overflow-hidden rounded-3xl border border-white/10 bg-card transition-colors hover:border-primary/25"
             >
               <ProjectCover accent={project.accent} title={project.title} className="h-48" />
               <div className="flex flex-1 flex-col p-6 sm:p-7">
