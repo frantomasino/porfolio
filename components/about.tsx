@@ -1,6 +1,6 @@
 export function About() {
   return (
-    <section id="sobre-mi" className="py-20 sm:py-28 border-t border-white/8">
+    <section id="sobre-mi" className="scroll-mt-24 py-20 sm:py-28 border-t border-white/8">
       <div className="mx-auto grid max-w-6xl gap-12 px-5 sm:px-8 lg:grid-cols-[0.9fr_1.1fr]">
         <div>
           <p className="eyebrow mb-3">Sobre mí</p>

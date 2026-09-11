@@ -6,7 +6,7 @@ export function Projects() {
   const [lead, ...rest] = featuredProjects
 
   return (
-    <section id="trabajo" className="py-20 sm:py-28">
+    <section id="trabajo" className="scroll-mt-24 py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <div className="mb-12 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div>

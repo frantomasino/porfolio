@@ -2,7 +2,7 @@ import { skillGroups } from "@/lib/content"
 
 export function Skills() {
   return (
-    <section id="skills" className="py-20 sm:py-28 border-t border-white/8">
+    <section id="skills" className="scroll-mt-24 py-20 sm:py-28 border-t border-white/8">
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <p className="eyebrow mb-3">Stack</p>
         <h2 className="font-display text-4xl sm:text-5xl mb-12">Skills</h2>

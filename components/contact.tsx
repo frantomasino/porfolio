@@ -30,7 +30,7 @@ const channels = [
 
 export function Contact() {
   return (
-    <section id="contacto" className="py-20 sm:py-28 border-t border-white/8">
+    <section id="contacto" className="scroll-mt-24 py-20 sm:py-28 border-t border-white/8">
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <div className="rounded-[2rem] border border-white/10 bg-gradient-to-br from-white/6 to-transparent p-8 sm:p-12">
           <p className="eyebrow mb-3">Siguiente paso</p>

@@ -2,7 +2,7 @@ import { certifications } from "@/lib/content"
 
 export function Certifications() {
   return (
-    <section id="formacion" className="py-20 sm:py-28 border-t border-white/8">
+    <section id="formacion" className="scroll-mt-24 py-20 sm:py-28 border-t border-white/8">
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <p className="eyebrow mb-3">Coderhouse</p>
         <h2 className="font-display text-4xl sm:text-5xl mb-4">Formación</h2>
