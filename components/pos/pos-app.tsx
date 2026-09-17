@@ -1,6 +1,6 @@
 "use client"
 
-import { Settings2, ShoppingBag } from "lucide-react"
+import { BarChart3, Settings2, ShoppingBag } from "lucide-react"
 import { useState } from "react"
 import { CartPanel } from "@/components/pos/cart-panel"
 import { Logo } from "@/components/pos/logo"
@@ -8,6 +8,7 @@ import { ProductGrid } from "@/components/pos/product-grid"
 import { QtyDialog } from "@/components/pos/qty-dialog"
 import { SettingsPanel } from "@/components/pos/settings-panel"
 import { TicketScreen } from "@/components/pos/ticket-screen"
+import { VentasPanel } from "@/components/pos/ventas-panel"
 import { Button } from "@/components/ui/button"
 import {
   AlertDialog,
@@ -67,6 +68,10 @@ export function PosApp() {
     )
   }
 
+  if (pos.view === "ventas") {
+    return <VentasPanel sales={pos.sales} onBack={() => pos.setView("caja")} />
+  }
+
   if (pos.view === "precios") {
     return (
       <SettingsPanel
@@ -89,12 +94,22 @@ export function PosApp() {
           <Button
             type="button"
             variant="secondary"
-            size="icon"
-            className="size-11 bg-[#f6ede0] text-primary hover:bg-white"
+            className="h-11 bg-[#f6ede0] px-3 text-primary hover:bg-white"
+            aria-label="Ventas"
+            onClick={() => pos.setView("ventas")}
+          >
+            <BarChart3 />
+            <span className="hidden sm:inline">Ventas</span>
+          </Button>
+          <Button
+            type="button"
+            variant="secondary"
+            className="h-11 bg-[#f6ede0] px-3 text-primary hover:bg-white"
             aria-label="Precios"
             onClick={() => pos.setView("precios")}
           >
             <Settings2 />
+            <span className="hidden sm:inline">Precios</span>
           </Button>
         </div>
       </header>

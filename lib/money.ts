@@ -42,11 +42,13 @@ export function formatDateTimeAR(date: Date): { date: string; time: string } {
       day: "2-digit",
       month: "2-digit",
       year: "numeric",
+      timeZone: "America/Argentina/Buenos_Aires",
     }).format(date),
     time: new Intl.DateTimeFormat("es-AR", {
       hour: "2-digit",
       minute: "2-digit",
       hour12: false,
+      timeZone: "America/Argentina/Buenos_Aires",
     }).format(date),
   }
 }

@@ -15,12 +15,16 @@ export function TicketScreen({
   lines,
   onBack,
   onNewSale,
+  backLabel = "Volver a la caja",
+  showNewSale = true,
 }: {
   ticketNumber: number
   issuedAt: Date
   lines: CartLine[]
   onBack: () => void
-  onNewSale: () => void
+  onNewSale?: () => void
+  backLabel?: string
+  showNewSale?: boolean
 }) {
   const [copied, setCopied] = useState(false)
   const { date, time } = formatDateTimeAR(issuedAt)
@@ -53,12 +57,16 @@ export function TicketScreen({
     <div className="ticket-screen flex min-h-dvh flex-col bg-[#2a0f10] text-[#f6ede0]">
       <div className="no-print flex items-center justify-between gap-2 border-b border-white/10 px-4 py-3">
         <Button type="button" variant="ghost" className="text-[#f6ede0]" onClick={onBack}>
-          Volver a la caja
+          {backLabel}
         </Button>
-        <p className="text-sm font-medium">Ticket listo</p>
-        <Button type="button" variant="ghost" className="text-[#f6ede0]" onClick={onNewSale}>
-          Nueva venta
-        </Button>
+        <p className="text-sm font-medium">{showNewSale ? "Ticket listo" : "Ticket"}</p>
+        {showNewSale && onNewSale ? (
+          <Button type="button" variant="ghost" className="text-[#f6ede0]" onClick={onNewSale}>
+            Nueva venta
+          </Button>
+        ) : (
+          <span className="w-24" />
+        )}
       </div>
 
       <div className="flex-1 overflow-y-auto px-4 py-6">

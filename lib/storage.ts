@@ -1,5 +1,6 @@
 import { mergeCatalog, pricesFromCatalog, SEED_CATALOG, type PriceFields } from "@/lib/catalog"
 import type { CartLine, IssuedTicket } from "@/lib/cart"
+import type { StoredSale } from "@/lib/sales"
 
 const PREFIX = "pp-pos-v1"
 
@@ -8,6 +9,7 @@ export const STORAGE_KEYS = {
   nextTicket: `${PREFIX}-next-ticket`,
   cart: `${PREFIX}-cart`,
   issued: `${PREFIX}-issued`,
+  sales: `${PREFIX}-sales`,
 } as const
 
 function readJson<T>(key: string): T | null {
@@ -67,4 +69,13 @@ export function saveIssuedTicket(ticket: IssuedTicket | null) {
     return
   }
   writeJson(STORAGE_KEYS.issued, ticket)
+}
+
+export function loadSales(): StoredSale[] {
+  const stored = readJson<StoredSale[]>(STORAGE_KEYS.sales)
+  return Array.isArray(stored) ? stored : []
+}
+
+export function saveSales(sales: StoredSale[]) {
+  writeJson(STORAGE_KEYS.sales, sales)
 }

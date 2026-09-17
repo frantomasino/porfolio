@@ -20,7 +20,9 @@ npm run build
 npm start
 ```
 
-Todo corre en el navegador. No hay backend ni login. Después de la primera carga, el pedido y los precios quedan en este dispositivo (`localStorage`).
+Todo corre en el navegador. No hay backend ni login. Después de la primera carga, el pedido, los precios y las ventas quedan en este dispositivo (`localStorage`).
+
+Demo pública (esta rama, sin login de Vercel): https://pyp-caja.surge.sh
 
 ## Cómo usarla en el mostrador
 
@@ -31,9 +33,21 @@ Todo corre en el navegador. No hay backend ni login. Después de la primera carg
    - **Congelados:** botones de **½ kg** y **1 kg** con el precio de lista (el medio kilo no es la mitad del kilo). Los kilos a medida se cobran con el precio de 1 kg.
    - **Ofertas y maple:** cantidad en unidades / packs.
 4. Revisá el pedido a la derecha (en el celular, **Ver pedido**).
-5. **Emitir ticket** abre el comprobante a pantalla completa.
+5. **Emitir ticket** abre el comprobante a pantalla completa. El ticket queda guardado en este dispositivo (no se pierde con **Nueva venta**).
 
 **Ricosaurios** aparece en la lista de precios pero no se vende hasta que le carguen un valor.
+
+## Ventas (reportes)
+
+El ícono de barras abre el área de reportes, también solo para el personal:
+
+- Recortes **Hoy / Día / Semana / Mes / Año** (zona horaria `America/Argentina/Buenos_Aires`) y un calendario para saltar.
+- Resumen del período: cantidad de tickets, total $ y ticket promedio.
+- Ranking de productos con cantidad (kg, ½ kg o unidades) y plata vendida. En congelados, si hubo ½ kg y 1 kg, se ven por separado.
+- Lista de días → tickets del día → reabrir / imprimir.
+- **Copiar CSV** deja las líneas del período listas para pegar en Google Sheets.
+
+Los datos viven en `localStorage` de este aparato. No hay sync a la nube en v1.
 
 ## Cómo imprimir
 

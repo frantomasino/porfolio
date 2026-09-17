@@ -3,18 +3,21 @@
 import { useCallback, useEffect, useMemo, useState } from "react"
 import { addOrMergeLine, cartTotal, repriceLines, removeLine, setLineQty, type CartLine, type IssuedTicket, type PricingMode } from "@/lib/cart"
 import { mergeCatalog, pricesFromCatalog, SEED_CATALOG, type PriceFields, type Product } from "@/lib/catalog"
+import { toStoredSale, upsertSale, type StoredSale } from "@/lib/sales"
 import {
   loadCart,
   loadIssuedTicket,
   loadNextTicket,
   loadPriceOverrides,
+  loadSales,
   saveCart,
   saveIssuedTicket,
   saveNextTicket,
   savePriceOverrides,
+  saveSales,
 } from "@/lib/storage"
 
-export type View = "caja" | "ticket" | "precios"
+export type View = "caja" | "ticket" | "precios" | "ventas"
 
 export function usePos() {
   const [hydrated, setHydrated] = useState(false)
@@ -22,6 +25,7 @@ export function usePos() {
   const [lines, setLines] = useState<CartLine[]>([])
   const [nextTicket, setNextTicket] = useState(1)
   const [issued, setIssued] = useState<IssuedTicket | null>(null)
+  const [sales, setSales] = useState<StoredSale[]>([])
   const [view, setView] = useState<View>("caja")
 
   useEffect(() => {
@@ -31,6 +35,7 @@ export function usePos() {
     setLines(cart)
     setNextTicket(loadNextTicket())
     setIssued(loadIssuedTicket())
+    setSales(loadSales())
     setHydrated(true)
   }, [])
 
@@ -53,6 +58,11 @@ export function usePos() {
     if (!hydrated) return
     saveIssuedTicket(issued)
   }, [hydrated, issued])
+
+  useEffect(() => {
+    if (!hydrated) return
+    saveSales(sales)
+  }, [hydrated, sales])
 
   const total = useMemo(() => cartTotal(lines), [lines])
   const ticketNumber = issued?.number ?? nextTicket
@@ -84,8 +94,9 @@ export function usePos() {
       total,
     }
     setIssued(snapshot)
+    setSales((current) => upsertSale(current, toStoredSale(snapshot, products)))
     setView("ticket")
-  }, [issued, lines, nextTicket, total])
+  }, [issued, lines, nextTicket, products, total])
 
   const newSale = useCallback(() => {
     if (issued) {
@@ -116,6 +127,7 @@ export function usePos() {
     products,
     lines,
     total,
+    sales,
     view,
     setView,
     ticketNumber,
