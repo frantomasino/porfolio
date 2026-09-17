@@ -91,12 +91,22 @@ export function Hero() {
           </div>
 
           <div className="hidden lg:grid grid-cols-2 gap-3">
-            <MosaicLink project={featuredProjects[0]} className="col-span-2 h-40">
-              <ProjectCover accent={featuredProjects[0].accent} title={featuredProjects[0].title} className="h-full" />
+            <MosaicLink project={featuredProjects[0]} className="group col-span-2 h-40">
+              <ProjectCover
+                accent={featuredProjects[0].accent}
+                title={featuredProjects[0].title}
+                image={featuredProjects[0].image}
+                className="h-full"
+              />
             </MosaicLink>
             {featuredProjects.slice(1, 5).map((project) => (
-              <MosaicLink key={project.slug} project={project} className="h-28">
-                <ProjectCover accent={project.accent} title={project.title} className="h-full" />
+              <MosaicLink key={project.slug} project={project} className="group h-28">
+                <ProjectCover
+                  accent={project.accent}
+                  title={project.title}
+                  image={project.image}
+                  className="h-full"
+                />
               </MosaicLink>
             ))}
           </div>

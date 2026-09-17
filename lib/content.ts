@@ -59,6 +59,7 @@ export const featuredProjects = [
     demo: "https://www.lambda3d.com.ar/",
     github: "https://github.com/frantomasino/Lambda",
     accent: "lambda",
+    image: "/projects/lambda.jpg",
   },
   {
     slug: "ms-motors",
@@ -79,6 +80,7 @@ export const featuredProjects = [
     demo: "https://www.msmotors.com.ar/",
     github: "https://github.com/frantomasino/ms-motors",
     accent: "motors",
+    image: "/projects/motors.jpg",
   },
   {
     slug: "zibra",
@@ -99,6 +101,7 @@ export const featuredProjects = [
     demo: "https://www.zibraconsultores.com/",
     github: null,
     accent: "zibra",
+    image: "/projects/zibra.jpg",
   },
   {
     slug: "remito",
@@ -119,6 +122,7 @@ export const featuredProjects = [
     demo: null,
     github: "https://github.com/frantomasino/remito-tapamania",
     accent: "remito",
+    image: null,
   },
   {
     slug: "nexa",
@@ -139,6 +143,7 @@ export const featuredProjects = [
     demo: "https://app-two-beta-37.vercel.app",
     github: "https://github.com/frantomasino/app",
     accent: "nexa",
+    image: null,
   },
 ] as const
 

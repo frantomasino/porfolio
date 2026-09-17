@@ -20,7 +20,7 @@ export function Projects() {
         </div>
 
         <article className="group overflow-hidden rounded-3xl border border-white/10 bg-card transition-colors hover:border-primary/25">
-          <ProjectCover accent={lead.accent} title={lead.title} className="h-64 sm:h-80" />
+          <ProjectCover accent={lead.accent} title={lead.title} image={lead.image} className="h-64 sm:h-80" />
           <div className="grid gap-8 p-6 sm:p-10 lg:grid-cols-[1.2fr_0.8fr]">
             <div>
               <p className="eyebrow">
@@ -59,9 +59,14 @@ export function Projects() {
           {rest.map((project) => (
             <article
               key={project.slug}
-              className="flex flex-col overflow-hidden rounded-3xl border border-white/10 bg-card transition-colors hover:border-primary/25"
+              className="group flex flex-col overflow-hidden rounded-3xl border border-white/10 bg-card transition-colors hover:border-primary/25"
             >
-              <ProjectCover accent={project.accent} title={project.title} className="h-48" />
+              <ProjectCover
+                accent={project.accent}
+                title={project.title}
+                image={project.image}
+                className="h-52 sm:h-56"
+              />
               <div className="flex flex-1 flex-col p-6 sm:p-7">
                 <p className="eyebrow">
                   {project.year} · {project.category}

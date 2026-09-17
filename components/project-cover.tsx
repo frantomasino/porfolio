@@ -5,19 +5,31 @@ type Accent = "lambda" | "motors" | "zibra" | "remito" | "nexa"
 export function ProjectCover({
   accent,
   title,
+  image,
   className,
 }: {
   accent: Accent
   title: string
+  image?: string | null
   className?: string
 }) {
   return (
-    <div className={cn("relative overflow-hidden", className)}>
-      {accent === "lambda" && <LambdaArt />}
-      {accent === "motors" && <MotorsArt />}
-      {accent === "zibra" && <ZibraArt />}
-      {accent === "remito" && <RemitoArt />}
-      {accent === "nexa" && <NexaArt />}
+    <div className={cn("relative overflow-hidden bg-[#101216]", className)}>
+      {image ? (
+        <img
+          src={image}
+          alt={`Captura de ${title}`}
+          className="h-full w-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+        />
+      ) : (
+        <>
+          {accent === "lambda" && <LambdaArt />}
+          {accent === "motors" && <MotorsArt />}
+          {accent === "zibra" && <ZibraArt />}
+          {accent === "remito" && <RemitoArt />}
+          {accent === "nexa" && <NexaArt />}
+        </>
+      )}
       <span className="sr-only">{title}</span>
     </div>
   )
