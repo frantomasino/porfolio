@@ -111,7 +111,7 @@ function ProjectLinks({
   github: string | null
 }) {
   if (!demo && !github) {
-    return <p className="text-xs text-muted-foreground">Proyecto de cliente · demo privada</p>
+    return <p className="text-xs text-muted-foreground">Sin demo pública</p>
   }
 
   return (
