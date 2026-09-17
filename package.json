@@ -1,7 +1,8 @@
 {
-  "name": "my-v0-project",
-  "version": "0.1.0",
+  "name": "pp-caja",
+  "version": "1.0.0",
   "private": true,
+  "description": "Caja interna de Pollería P&P",
   "engines": {
     "node": "24.x"
   },
@@ -9,7 +10,8 @@
     "build": "next build",
     "dev": "next dev",
     "lint": "eslint .",
-    "start": "next start"
+    "start": "next start",
+    "export": "STATIC_EXPORT=1 next build"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
