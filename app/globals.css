@@ -1,48 +1,33 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-@custom-variant dark (&:is(.dark *));
-
 :root {
-  --background: #08090b;
-  --foreground: #f4f1ea;
-  --card: #101216;
-  --card-foreground: #f4f1ea;
-  --popover: #101216;
-  --popover-foreground: #f4f1ea;
-  --primary: #e8ff6a;
-  --primary-foreground: #12140a;
-  --secondary: #181b22;
-  --secondary-foreground: #f4f1ea;
-  --muted: #181b22;
-  --muted-foreground: #9c988f;
-  --accent: #181b22;
-  --accent-foreground: #f4f1ea;
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.985 0 0);
-  --border: rgba(244, 241, 234, 0.1);
-  --input: rgba(244, 241, 234, 0.12);
-  --ring: #e8ff6a;
+  --background: #f3e6d4;
+  --foreground: #2a1410;
+  --card: #fff8ef;
+  --card-foreground: #2a1410;
+  --popover: #fff8ef;
+  --popover-foreground: #2a1410;
+  --primary: #8b1c1c;
+  --primary-foreground: #f6ede0;
+  --secondary: #ead7c2;
+  --secondary-foreground: #3a1d16;
+  --muted: #eadccb;
+  --muted-foreground: #6d5348;
+  --accent: #c4a35a;
+  --accent-foreground: #2a1410;
+  --destructive: #9b1b1b;
+  --destructive-foreground: #fff8ef;
+  --border: #e0cbb4;
+  --input: #d9c3aa;
+  --ring: #8b1c1c;
   --radius: 1rem;
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(0.269 0 0);
-  --sidebar-ring: oklch(0.439 0 0);
 }
 
 @theme inline {
-  --font-sans: var(--font-geist-sans), "Geist Fallback", ui-sans-serif, system-ui;
-  --font-mono: var(--font-geist-mono), "Geist Mono Fallback", ui-monospace;
-  --font-display: Georgia, "Times New Roman", ui-serif, serif;
+  --font-sans: var(--font-source), "Source Sans 3", ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-fraunces), Fraunces, Georgia, "Times New Roman", serif;
+  --font-mono: ui-monospace, "Courier New", monospace;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -74,15 +59,16 @@
   }
 
   html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 6.5rem;
+    background: var(--background);
   }
 
   body {
     @apply bg-background text-foreground antialiased;
     background-image:
-      radial-gradient(1200px 500px at 80% -10%, rgba(232, 255, 106, 0.08), transparent 50%),
-      radial-gradient(900px 400px at 0% 20%, rgba(90, 140, 255, 0.08), transparent 45%);
+      radial-gradient(900px 420px at 100% -10%, rgba(139, 28, 28, 0.12), transparent 55%),
+      radial-gradient(700px 380px at -10% 110%, rgba(107, 62, 38, 0.1), transparent 50%),
+      linear-gradient(180deg, rgba(255, 248, 239, 0.35), transparent 28%);
+    min-height: 100dvh;
   }
 
   body::before {
@@ -90,9 +76,14 @@
     pointer-events: none;
     position: fixed;
     inset: 0;
-    z-index: 50;
-    opacity: 0.045;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    z-index: 0;
+    opacity: 0.04;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  body > * {
+    position: relative;
+    z-index: 1;
   }
 }
 
@@ -100,18 +91,42 @@
   .font-display {
     font-family: var(--font-display);
   }
+}
 
-  .text-balance {
-    text-wrap: balance;
+.ticket-rule {
+  border-top: 1px dashed #c4b09a;
+}
+
+@media print {
+  @page {
+    size: 80mm auto;
+    margin: 5mm 4mm;
   }
 
-  .eyebrow {
-    @apply font-mono text-[11px] uppercase tracking-[0.22em] text-muted-foreground;
+  html,
+  body {
+    background: white !important;
   }
 
-  .grid-line {
-    background-image: linear-gradient(to right, rgba(244, 241, 234, 0.06) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(244, 241, 234, 0.06) 1px, transparent 1px);
-    background-size: 56px 56px;
+  body::before {
+    display: none;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .ticket-screen {
+    background: white !important;
+    color: black !important;
+    min-height: auto !important;
+  }
+
+  .ticket-receipt {
+    width: 80mm !important;
+    max-width: 80mm !important;
+    margin: 0 auto !important;
+    box-shadow: none !important;
+    background: white !important;
   }
 }

@@ -1,41 +1,35 @@
-import type { Metadata } from "next"
-import { GeistSans } from "geist/font/sans"
-import { GeistMono } from "geist/font/mono"
+import type { Metadata, Viewport } from "next"
+import { Fraunces, Source_Sans_3 } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 
+const display = Fraunces({
+  subsets: ["latin"],
+  variable: "--font-fraunces",
+})
+
+const sans = Source_Sans_3({
+  subsets: ["latin"],
+  variable: "--font-source",
+})
+
 export const metadata: Metadata = {
-  title: {
-    default: "Francisco Tomasino Solari — Desarrollador Full Stack",
-    template: "%s · Francisco Tomasino",
+  title: "P&P Caja",
+  description: "Caja interna de Pollería P&P. Armá el pedido por kilo y emití el ticket.",
+  applicationName: "P&P Caja",
+  icons: { icon: "/favicon.svg" },
+  appleWebApp: {
+    capable: true,
+    title: "P&P Caja",
+    statusBarStyle: "black-translucent",
   },
-  description:
-    "Portfolio de Francisco Tomasino Solari. Desarrollador Full Stack. Shopify, Liquid, Gemini IA y productos reales: Lambda 3D, MS Motors, Zibra, Remito y Nexa.",
-  keywords: [
-    "Francisco Tomasino",
-    "desarrollador full stack",
-    "Next.js",
-    "TypeScript",
-    "Shopify",
-    "Liquid",
-    "Gemini",
-    "portfolio",
-    "Buenos Aires",
-    "Nexa",
-    "calculadora de baldosas",
-    "Zibra Consultores",
-  ],
-  authors: [{ name: "Francisco Tomasino Solari" }],
-  openGraph: {
-    title: "Francisco Tomasino Solari — Desarrollador Full Stack",
-    description:
-      "Productos web para empresas reales: catálogos, plataformas 3D y sistemas de gestión.",
-    locale: "es_AR",
-    type: "website",
-  },
-  icons: {
-    icon: "/favicon.svg",
-  },
+}
+
+export const viewport: Viewport = {
+  themeColor: "#8b1c1c",
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
 }
 
 export default function RootLayout({
@@ -44,8 +38,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="es" className={`${GeistSans.variable} ${GeistMono.variable} dark`}>
-      <body className="font-sans min-h-screen">
+    <html lang="es-AR" className={`${display.variable} ${sans.variable} h-full`}>
+      <body className="font-sans min-h-dvh antialiased">
         {children}
         <Analytics />
       </body>
