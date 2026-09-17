@@ -143,7 +143,7 @@ export const featuredProjects = [
     demo: null,
     github: null,
     accent: "nexa",
-    image: null,
+    image: "/projects/nexa.jpg",
   },
 ] as const
 
